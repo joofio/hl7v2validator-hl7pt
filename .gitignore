@@ -132,3 +132,5 @@ logs/
 # Environment files
 docker/.env
 !docker/.env.example
+
+report.txt
