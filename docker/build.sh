@@ -130,9 +130,10 @@ if [ ! -f "$DOCKERFILE_PATH" ]; then
     exit 1
 fi
 
-# Check if we're in the correct directory
-if [ ! -f "../requirements.txt" ]; then
-    echo -e "${RED}Error: requirements.txt not found. Are you in the docker directory?${NC}"
+# Check repository structure is accessible from script location
+if [ ! -f "$PROJECT_ROOT/requirements.txt" ]; then
+    echo -e "${RED}Error: requirements.txt not found at $PROJECT_ROOT/requirements.txt${NC}"
+    echo -e "${RED}       Make sure the repository is checked out completely${NC}"
     exit 1
 fi
 
